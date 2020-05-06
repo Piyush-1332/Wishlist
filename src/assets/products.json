@@ -1,0 +1,46 @@
+[
+    {
+        "productId": "1",
+        "price": 7854,
+        "colour": "Orange",
+        "dimension": "9",
+        "specification": "Equipment",
+        "manufacturer": "Derek",
+        "quantity": 1,
+        "productCategory": 2,
+        "productName": "Snow Claws"
+    },
+    {
+        "productId": "2",
+        "price": 9999,
+        "colour": "Black",
+        "dimension": "9",
+        "specification": "Footwear",
+        "manufacturer": "NIKE",
+        "quantity": 1,
+        "productCategory": 2,
+        "productName": "AirForce/210"
+    },
+    {
+        "productId": "3",
+        "price": 7854,
+        "colour": "Orange",
+        "dimension": "9",
+        "specification": "Equipment",
+        "manufacturer": "Derek",
+        "quantity": 1,
+        "productCategory": 2,
+        "productName": "Snow Claws"
+    },
+    {
+        "productId": "4",
+        "price": 4500,
+        "colour": "White",
+        "dimension": "9",
+        "specification": "Clothing",
+        "manufacturer": "Zara",
+        "quantity": 1,
+        "productCategory": 2,
+        "productName": "Snow Jacket"
+    }
+]

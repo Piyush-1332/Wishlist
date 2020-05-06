@@ -33,162 +33,38 @@
         </div>
 
         <div class="row">
+            <ng-container *ngFor="let item of product; let i=index">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card h-100">
+                        <a href="#"><img class="card-img-top"
+                                src="https://icdn2.themanual.com/image/themanual/hyperlite-mountain-gear-summit-pack-4.jpg"
+                                alt=""></a>
+                        <div class="card-body">
+                            <h4 class="card-title">
+                                <a href="#">{{item.productName}}</a>
+                            </h4>
+                            <h5>₹{{item.price}}</h5>
+                            <p class="card-text">{{item.manufacturer}}!</p>
+                        </div>
+                        <div class="card-footer">
+                            <div class="row">
+                                <div class="col-sm-8 col-lg-8">
+                                    <button type="button" class="btn btn-primary btn-block">Add to Cart</button>
+                                </div>
+                                <div class="col-sm-4 col-lg-4" style="margin-top: -3%;">
+                                    <!-- <div class="collapsible-header btn" (click)="showFirst=!showFirst"><i class="fa fa-bookmark fa_custom fa-2x btn"
+                                        *ngIf="showFirst"></i><i class="fa fa-trash-o fa-custom fa-2x btn btn-primary"
+                                        *ngIf="!showFirst"></i></div> -->
 
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="card h-100">
-                    <a href="#"><img class="card-img-top"
-                            src="https://icdn2.themanual.com/image/themanual/hyperlite-mountain-gear-summit-pack-4.jpg"
-                            alt=""></a>
-                    <div class="card-body">
-                        <h4 class="card-title">
-                            <a href="#">Item One</a>
-                        </h4>
-                        <h5>₹24.99</h5>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam
-                            aspernatur!</p>
-                    </div>
-                    <div class="card-footer">
-                        <div class="row">
-                            <div class="col-sm-8 col-lg-8">
-                                <button type="button" class="btn btn-primary btn-block">Add to Cart</button>
-                            </div>
-                            <div class="col-sm-4 col-lg-4" style="margin-top: -3%;">
-                                <button class="btn"><i class="fa fa-bookmark fa_custom fa-2x btn"></i></button>
+                                    <button class="addtowishlist(item.productId)" class="btn"><i class="fa fa-bookmark fa_custom fa-2x btn"></i></button>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="card h-100">
-                    <a href="#"><img class="card-img-top"
-                            src="https://cdn.sportsshoes.com/product/V/VIB249/VIB249_1000_1.jpg" alt=""></a>
-                    <div class="card-body">
-                        <h4 class="card-title">
-                            <a href="#">Item Two</a>
-                        </h4>
-                        <h5>₹24.99</h5>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam
-                            aspernatur! Lorem ipsum dolor sit amet.</p>
-                    </div>
-                    <div class="card-footer">
-                        <div class="row">
-                            <div class="col-sm-8">
-                                <button type="button" class="btn btn-primary btn-block">Add to Cart</button>
-                            </div>
-                            <div class="col-sm-4 col-lg-4" style="margin-top: -3%;">
-                                <button class="btn"><i class="fa fa-bookmark fa_custom fa-2x btn"></i></button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="card h-100">
-                    <a href="#"><img class="card-img-top"
-                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTQ4dCpCuRzM5eag2--ayGvZnZtXoajAYxXBhZ1An39VAJnF3no&usqp=CAU"
-                            alt=""></a>
-                    <div class="card-body">
-                        <h4 class="card-title">
-                            <a href="#">Item Three</a>
-                        </h4>
-                        <h5>₹24.99</h5>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam
-                            aspernatur!</p>
-                    </div>
-                    <div class="card-footer">
-                        <div class="row">
-                            <div class="col-sm-8">
-                                <button type="button" class="btn btn-primary btn-block">Add to Cart</button>
-                            </div>
-                            <div class="col-sm-4 col-lg-4" style="margin-top: -3%;">
-                                <button class="btn"><i class="fa fa-bookmark fa_custom fa-2x btn"></i></button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="card h-100">
-                    <a href="#"><img class="card-img-top"
-                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcT6SCZNC_CbJlf73FW0P5dQkkq0Ux22_Qx0kNz4JwmfA2cyMHMj&usqp=CAU"
-                            alt=""></a>
-                    <div class="card-body">
-                        <h4 class="card-title">
-                            <a href="#">Item Four</a>
-                        </h4>
-                        <h5>₹24.99</h5>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam
-                            aspernatur!</p>
-                    </div>
-                    <div class="card-footer">
-                        <div class="row">
-                            <div class="col-sm-8">
-                                <button type="button" class="btn btn-primary btn-block">Add to Cart</button>
-                            </div>
-                            <div class="col-sm-4 col-lg-4" style="margin-top: -3%;">
-                                <button class="btn"><i class="fa fa-bookmark fa_custom fa-2x btn"></i></button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="card h-100">
-                    <a href="#"><img class="card-img-top"
-                            src="https://icdn2.themanual.com/image/themanual/hyperlite-mountain-gear-summit-pack-4.jpg"
-                            alt=""></a>
-                    <div class="card-body">
-                        <h4 class="card-title">
-                            <a href="#">Item Five</a>
-                        </h4>
-                        <h5>₹24.99</h5>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam
-                            aspernatur! Lorem ipsum dolor sit amet.</p>
-                    </div>
-                    <div class="card-footer">
-                        <div class="row">
-                            <div class="col-sm-8">
-                                <button type="button" class="btn btn-primary btn-block">Add to Cart</button>
-                            </div>
-                            <div class="col-sm-4 col-lg-4" style="margin-top: -3%;">
-                                <button class="btn"><i class="fa fa-bookmark fa_custom fa-2x btn"></i></button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="card h-100">
-                    <a href="#"><img class="card-img-top"
-                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQEPZXjNPYYaPwzYSgmsc4YavXn6s7wNvScGwM7nKQG-99rHJY3&usqp=CAU"
-                            alt=""></a>
-                    <div class="card-body">
-                        <h4 class="card-title">
-                            <a href="#">Item Six</a>
-                        </h4>
-                        <h5>₹24.99</h5>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam
-                            aspernatur!</p>
-                    </div>
-                    <div class="card-footer">
-                        <div class="row">
-                            <div class="col-sm-8">
-                                <button type="button" class="btn btn-primary btn-block">Add to Cart</button>
-                            </div>
-                            <div class="col-sm-4 col-lg-4" style="margin-top: -3%;">
-                                <button class="btn"><i class="fa fa-bookmark fa_custom fa-2x btn"></i></button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
+            </ng-container>
         </div>
         <!-- /.row -->
 

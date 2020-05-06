@@ -9,6 +9,9 @@ import { FooterComponent } from './footer/footer.component';
 import { ProductsComponent } from './products/products.component';
 import { ViewWishlistComponent } from './view-wishlist/view-wishlist.component';
 import { HomeComponent } from './home/home.component';
+import { WishlistServiceService } from './services/wishlist-service.service';
+import { HttpClientModule } from '@angular/common/http';
+import { ProductServiceService } from './services/product-service.service';
 
 @NgModule({
   declarations: [
@@ -22,9 +25,10 @@ import { HomeComponent } from './home/home.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [WishlistServiceService,ProductServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

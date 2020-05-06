@@ -1,4 +1,6 @@
 <br><br>
+
+<ng-container *ngFor="let item of wishList; let i=index">
 <div class="container">
     <div class="container-fluid">
         <div class="row">
@@ -10,189 +12,21 @@
                                 alt="Card image cap">
                         </div>
                         <div class="card-body">
-                            <h4 class="card-title">Nike AirForce/210</h4>
-                            <h5 class="card-text">₹4,500</h5>
+                            <h4 class="card-title">{{item.productName}}</h4>
+                            <h5 class="card-text">₹{{item.price}}</h5>
+                            <h6 class="card-text">{{item.specification}}</h6>
                         </div>
                         <div class="card-body del">
-                            <button class="btn btn-primary"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+                            <button (click)="delete(item.productId)" class="btn btn-primary"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
                         </div>
                     </div>
                     <div class="card-footer">
-                        <small class="text-muted">NIKE</small>
+                        <small class="text-muted">{{item.manufacturer}}</small>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-12 mt-3">
-                <div class="card">
-                    <div class="card-horizontal">
-                        <div class="img-square-wrapper">
-                            <img class="card-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTQ4dCpCuRzM5eag2--ayGvZnZtXoajAYxXBhZ1An39VAJnF3no&usqp=CAU"
-                                alt="Card image cap">
-                        </div>
-                        <div class="card-body">
-                            <h4 class="card-title">Nike AirForce/210</h4>
-                            <h5 class="card-text">₹4,500</h5>
-                        </div>
-                        <div class="card-body del">
-                            <button class="btn btn-primary"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
-                        </div>
-                    </div>
-                    <div class="card-footer">
-                        <small class="text-muted">NIKE</small>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-12 mt-3">
-                <div class="card">
-                    <div class="card-horizontal">
-                        <div class="img-square-wrapper">
-                            <img class="card-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcT6SCZNC_CbJlf73FW0P5dQkkq0Ux22_Qx0kNz4JwmfA2cyMHMj&usqp=CAU"
-                                alt="Card image cap">
-                        </div>
-                        <div class="card-body">
-                            <h4 class="card-title">Nike AirForce/210</h4>
-                            <h5 class="card-text">₹4,500</h5>
-                        </div>
-                        <div class="card-body del">
-                            <button class="btn btn-primary"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
-                        </div>
-                    </div>
-                    <div class="card-footer">
-                        <small class="text-muted">NIKE</small>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-12 mt-3">
-                <div class="card">
-                    <div class="card-horizontal">
-                        <div class="img-square-wrapper">
-                            <img class="card-img" src="https://cdn.sportsshoes.com/product/V/VIB249/VIB249_1000_1.jpg"
-                                alt="Card image cap">
-                        </div>
-                        <div class="card-body">
-                            <h4 class="card-title">Nike AirForce/210</h4>
-                            <h5 class="card-text">₹4,500</h5>
-                        </div>
-                        <div class="card-body del">
-                            <button class="btn btn-primary"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
-                        </div>
-                    </div>
-                    <div class="card-footer">
-                        <small class="text-muted">NIKE</small>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-12 mt-3">
-                <div class="card">
-                    <div class="card-horizontal">
-                        <div class="img-square-wrapper">
-                            <img class="card-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQEPZXjNPYYaPwzYSgmsc4YavXn6s7wNvScGwM7nKQG-99rHJY3&usqp=CAU"
-                                alt="Card image cap">
-                        </div>
-                        <div class="card-body">
-                            <h4 class="card-title">Nike AirForce/210</h4>
-                            <h5 class="card-text">₹4,500</h5>
-                        </div>
-                        <div class="card-body del">
-                            <button class="btn btn-primary"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
-                        </div>
-                    </div>
-                    <div class="card-footer">
-                        <small class="text-muted">NIKE</small>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-12 mt-3">
-                <div class="card">
-                    <div class="card-horizontal">
-                        <div class="img-square-wrapper">
-                            <img class="card-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQo7iwqW1aY-_m9NJ7uvzws7SAFpoNI8m4Z6m45PLbaoQ19PP2c&usqp=CAU"
-                                alt="Card image cap">
-                        </div>
-                        <div class="card-body">
-                            <h4 class="card-title">Nike AirForce/210</h4>
-                            <h5 class="card-text">₹4,500</h5>
-                        </div>
-                        <div class="card-body del">
-                            <button class="btn btn-primary"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
-                        </div>
-                    </div>
-                    <div class="card-footer">
-                        <small class="text-muted">NIKE</small>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-12 mt-3">
-                <div class="card">
-                    <div class="card-horizontal">
-                        <div class="img-square-wrapper">
-                            <img class="card-img" src="https://cdn.sportsshoes.com/product/V/VIB249/VIB249_1000_1.jpg"
-                                alt="Card image cap">
-                        </div>
-                        <div class="card-body">
-                            <h4 class="card-title">Nike AirForce/210</h4>
-                            <h5 class="card-text">₹4,500</h5>
-                        </div>
-                        <div class="card-body del">
-                            <button class="btn btn-primary"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
-                        </div>
-                    </div>
-                    <div class="card-footer">
-                        <small class="text-muted">NIKE</small>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-12 mt-3">
-                <div class="card">
-                    <div class="card-horizontal">
-                        <div class="img-square-wrapper">
-                            <img class="card-img" src="https://cdn.sportsshoes.com/product/V/VIB249/VIB249_1000_1.jpg"
-                                alt="Card image cap">
-                        </div>
-                        <div class="card-body">
-                            <h4 class="card-title">Nike AirForce/210</h4>
-                            <h5 class="card-text">₹4,500</h5>
-                        </div>
-                        <div class="card-body del">
-                            <button class="btn btn-primary"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
-                        </div>
-                    </div>
-                    <div class="card-footer">
-                        <small class="text-muted">NIKE</small>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
+    
 </div>
+</ng-container>
