@@ -25,7 +25,8 @@ export class ProductsComponent implements OnInit {
     this.getProducts().subscribe(data=>this.product=data);
   }
 
-  addtowishlist(productId: any){
+  addtowishlist(productId:number){
+    this.model=this.product.find(x=>x.productId==productId)
     let orb=this.service.addtowishlist(this.model);
     orb.subscribe((data)=>
     {

@@ -56,7 +56,7 @@
                                         *ngIf="showFirst"></i><i class="fa fa-trash-o fa-custom fa-2x btn btn-primary"
                                         *ngIf="!showFirst"></i></div> -->
 
-                                    <button class="addtowishlist(item.productId)" class="btn"><i class="fa fa-bookmark fa_custom fa-2x btn"></i></button>
+                                    <button (click)="addtowishlist(item.productId)" class="btn"><i class="fa fa-bookmark fa_custom fa-2x btn"></i></button>
                                 </div>
                             </div>
                         </div>
