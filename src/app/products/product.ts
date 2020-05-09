@@ -8,6 +8,7 @@ export interface Product{
      quantity: number;
      productCategory: number;
      productName: string;
+     retailerId : string;
 
 
 }

@@ -8,6 +8,7 @@ export class WishlistModel {
     public quantity: number;
     public productCategory: number;
     public productName: string;
+    public retailerId: string;
 
 
 }

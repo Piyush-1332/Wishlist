@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Product } from './product';
 import { ProductServiceService } from '../services/product-service.service';
+import { WishlistServiceService } from '../services/wishlist-service.service';
 
 @Component({
   selector: 'app-products',
@@ -15,7 +16,8 @@ export class ProductsComponent implements OnInit {
   private _url: string = "/assets/products.json";
   success: boolean;
   model: Product;
-  constructor(private http: HttpClient,private service:ProductServiceService) { }
+  retailerId:string="1";
+  constructor(private http: HttpClient,private service:WishlistServiceService) { }
 
   getProducts(): Observable<Product[]> {
     return this.http.get<Product[]>(this._url);
@@ -27,6 +29,7 @@ export class ProductsComponent implements OnInit {
 
   addtowishlist(productId:number){
     this.model=this.product.find(x=>x.productId==productId)
+    this.model.retailerId=this.retailerId;
     let orb=this.service.addtowishlist(this.model);
     orb.subscribe((data)=>
     {

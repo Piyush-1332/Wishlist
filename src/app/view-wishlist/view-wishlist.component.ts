@@ -18,11 +18,11 @@ export class ViewWishlistComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.loadUserList();
+    this.loadWishlist();
 
   }
 
-  loadUserList() {
+  loadWishlist() {
     this.service.getWishlist().subscribe(
       (data) => { this.wishList = data; }
     );
@@ -33,8 +33,10 @@ export class ViewWishlistComponent implements OnInit {
     this.service.delete(productId).subscribe(
       (data) => {
         this.dataFound = true;
-        this.model = data;
+        console.log('hello')
+        // this.model = data;
         console.log(this.model);
+        this.loadWishlist();
       },
       (err) => {
         this.dataNotFound = true;
@@ -42,6 +44,7 @@ export class ViewWishlistComponent implements OnInit {
         setTimeout(() => this.dataNotFound = false, 3000);
       }
     )
+  
   }
 
 

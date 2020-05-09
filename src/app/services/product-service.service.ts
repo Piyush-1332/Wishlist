@@ -13,7 +13,7 @@ export class ProductServiceService {
     this.baseUrl = `${environment.baseMwUrl}/wishlist`; //http://localhost:7000/wishlist
   }
 
-  addtowishlist(product:Product):Observable<Product>{
+  addtowishlist(product:Product):Observable<Product>{  
     return this.http.post<Product>(this.baseUrl,product); //http://localhost:7000/wishlist/
   }
 }
