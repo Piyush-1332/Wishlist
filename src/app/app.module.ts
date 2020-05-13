@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AddWishlistComponent } from './add-wishlist/add-wishlist.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { ProductsComponent } from './products/products.component';
@@ -16,7 +15,6 @@ import { ProductServiceService } from './services/product-service.service';
 @NgModule({
   declarations: [
     AppComponent,
-    AddWishlistComponent,
     HeaderComponent,
     FooterComponent,
     ProductsComponent,

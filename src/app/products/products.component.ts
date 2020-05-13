@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Product } from './product';
 import { ProductServiceService } from '../services/product-service.service';
 import { WishlistServiceService } from '../services/wishlist-service.service';
 import { WishlistModel } from '../model/wishlist-model';
+import { Product } from '../model/product';
 
 @Component({
   selector: 'app-products',
@@ -19,10 +19,6 @@ export class ProductsComponent implements OnInit {
   model: Product;
   retailerId: string = "1";
   constructor(private http: HttpClient, private service: WishlistServiceService, private servicepro: ProductServiceService) { }
-
-  // getProducts(): Observable<Product[]> {
-  //   return this.http.get<Product[]>(this._url);
-  // }
 
   ngOnInit(): void {
     this.loadProductList();
