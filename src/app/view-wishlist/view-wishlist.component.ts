@@ -10,42 +10,29 @@ import { Subscriber } from 'rxjs';
 })
 export class ViewWishlistComponent implements OnInit {
   wishList: WishlistModel[];
+  userId:string="101";
   dataFound:boolean;
   model:WishlistModel;
   dataNotFound:boolean;
   submitted:boolean;
-  constructor(private service: WishlistServiceService) { }
+  constructor(private wishlistService: WishlistServiceService) { }
 
   ngOnInit(): void {
-
     this.loadWishlist();
-
+  }
+  loadWishlist(){
+    this.wishlistService.getWishlist().subscribe((data:WishlistModel[])=>{
+      this.wishList=data;
+    },(error)=>{
+      console.log(error);
+    })
   }
 
-  loadWishlist() {
-    this.service.getWishlist().subscribe(
-      (data) => { this.wishList = data; }
-    );
+  delete(productId:string) {
+    console.log(productId)
+    this.wishlistService.removeFromWishlist(productId,this.userId).subscribe(() => {
+      alert("item removed from wishlist..")
+      this.loadWishlist();
+    })
   }
-
-  delete(productId) {
-    this.submitted = true;
-    this.service.delete(productId).subscribe(
-      (data) => {
-        this.dataFound = true;
-        console.log('hello')
-        // this.model = data;
-        console.log(this.model);
-        this.loadWishlist();
-      },
-      (err) => {
-        this.dataNotFound = true;
-        this.dataFound = false;
-        setTimeout(() => this.dataNotFound = false, 3000);
-      }
-    )
-  
-  }
-
-
 }

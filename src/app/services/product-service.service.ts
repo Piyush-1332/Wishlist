@@ -8,12 +8,28 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ProductServiceService {
-  baseUrl: string;
-  constructor(private http: HttpClient) {
-    this.baseUrl = `${environment.baseMwUrl}/wishlist`; //http://localhost:7000/wishlist
+  private baseUrl:string;
+
+  constructor(private httpClient:HttpClient) { 
+    this.baseUrl=`${environment.baseMwUrl}/api`
   }
 
-  addtowishlist(product:Product):Observable<Product>{  
-    return this.http.post<Product>(this.baseUrl,product); //http://localhost:7000/wishlist/
+  getProductList():Observable<Product[]>{
+    return this.httpClient.get<Product[]>(`${this.baseUrl}/products`);
+  }
+  addProduct(product: object): Observable<object> {
+    return this.httpClient.post(`${this.baseUrl}/products`, product);
+  }
+
+  updateProduct(product: any, id: string): Observable<Product> {
+    return this.httpClient.put<Product>(`${this.baseUrl}/products/${id}`, product);
+  }
+
+  deleteProduct(id: string): Observable<any> {
+    return this.httpClient.delete(`${this.baseUrl}/products/${id}`);
+  }
+
+  getProduct(id: string): Observable<Product> {
+    return this.httpClient.get<Product>(`${this.baseUrl}/products/${id}`);
   }
 }

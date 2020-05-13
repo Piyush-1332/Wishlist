@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { Product } from './product';
 import { ProductServiceService } from '../services/product-service.service';
 import { WishlistServiceService } from '../services/wishlist-service.service';
+import { WishlistModel } from '../model/wishlist-model';
 
 @Component({
   selector: 'app-products',
@@ -11,30 +12,36 @@ import { WishlistServiceService } from '../services/wishlist-service.service';
   styleUrls: ['./products.component.css']
 })
 export class ProductsComponent implements OnInit {
-  public product=[]
-  public pro={};
+  public product = []
+  public pro = {};
   private _url: string = "/assets/products.json";
   success: boolean;
   model: Product;
-  retailerId:string="1";
-  constructor(private http: HttpClient,private service:WishlistServiceService) { }
+  retailerId: string = "1";
+  constructor(private http: HttpClient, private service: WishlistServiceService, private servicepro: ProductServiceService) { }
 
-  getProducts(): Observable<Product[]> {
-    return this.http.get<Product[]>(this._url);
-  }
+  // getProducts(): Observable<Product[]> {
+  //   return this.http.get<Product[]>(this._url);
+  // }
 
   ngOnInit(): void {
-    this.getProducts().subscribe(data=>this.product=data);
+    this.loadProductList();
+  }
+  loadProductList() {
+    this.servicepro.getProductList().subscribe((data: Product[]) => {
+      this.product = data;
+    }, (error) => {
+      console.log(error);
+    })
   }
 
-  addtowishlist(productId:number){
-    this.model=this.product.find(x=>x.productId==productId)
-    this.model.retailerId=this.retailerId;
-    let orb=this.service.addtowishlist(this.model);
-    orb.subscribe((data)=>
-    {
-      this.success=true;
-      setTimeout(()=>this.success=false,3000);
+
+  addtowishlist(productId: number) {
+    this.model = this.product.find(x => x.productId == productId)
+    let orb = this.service.addtowishlist(this.model);
+    orb.subscribe((data) => {
+      this.success = true;
+      setTimeout(() => this.success = false, 3000);
     })
   }
 
