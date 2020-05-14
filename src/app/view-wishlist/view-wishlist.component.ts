@@ -31,7 +31,7 @@ export class ViewWishlistComponent implements OnInit {
   delete(productId:string) {
     console.log(productId)
     this.wishlistService.removeFromWishlist(productId,this.userId).subscribe(() => {
-      alert("item removed from wishlist..")
+      // alert("item removed from wishlist..")
       this.loadWishlist();
     })
   }
